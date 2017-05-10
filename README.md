@@ -21,7 +21,7 @@ $ npm start
 > Go to http://localhost:8080
 ```
 
-#### Expectations and Requirements
+#### MINIMUM REQUIREMENTS
 
 - App should make a request using `fetch` to the NASA API shared above.
 - App should render the title, explanation, and copyright of the image.
