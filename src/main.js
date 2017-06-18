@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import ApodContainer from './Apod.js';
+import ApodContainer from './ApodContainer.js';
 
 
 render(<ApodContainer />, document.querySelector('#app'));
