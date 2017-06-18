@@ -27,4 +27,14 @@ const ApodVideo = ({ src }) => (
   <iframe src={src} />
 );
 
-export { ApodHeader, ApodImage, ApodVideo }
+const ApodErrorMessage = () => (
+  <div>
+    Could not load APOD data.
+  </div>
+);
+
+const ApodLoading = () => (
+  <div>Loading...</div>
+);
+
+export { ApodHeader, ApodImage, ApodVideo, ApodErrorMessage, ApodLoading }

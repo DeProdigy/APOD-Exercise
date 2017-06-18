@@ -11,13 +11,17 @@ export default class ApodContainer extends Component {
 
     this.state = {
       apodData: {},
-      imageWidth: DEFAULT_IMAGE_WIDTH
+      imageWidth: DEFAULT_IMAGE_WIDTH,
+      isFetching: true,
+      apiError: false
     };
   }
 
   componentDidMount() {
     getNASAData(APOD_URL).then(jsonData => {
-      this.setState({ apodData: jsonData });
+      this.setState({ apodData: jsonData, isFetching: false });
+    }).catch(error => {
+      this.setState({ apiError: true, isFetching: false });
     });
   }
 
@@ -28,8 +32,21 @@ export default class ApodContainer extends Component {
   }
 
   render() {
+    var apodProps = {
+      title: this.state.apodData.title,
+      explanation: this.state.apodData.explanation,
+      copyright: this.state.apodData.copyright,
+      url: this.state.apodData.url,
+      hdurl: this.state.apodData.hdurl,
+      mediaType: this.state.apodData.media_type,
+      onMediaWidthChange: this.handleMediaWidthChange.bind(this),
+      imageWidth: this.state.imageWidth,
+      apiError: this.state.apiError,
+      isFetching: this.state.isFetching
+    };
+
     return (
-      <Apod {...this.state.apodData} onMediaWidthChange={this.handleMediaWidthChange.bind(this)} imageWidth={this.state.imageWidth} />
+      <Apod {...apodProps} />
     );
   }
 }
