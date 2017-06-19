@@ -3,7 +3,7 @@ import Apod from './Apod';
 import getNASAData from './apodFetcher';
 
 const DEFAULT_IMAGE_WIDTH = 500;
-const APOD_URL = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&hd=true' + '&date=2017-06-01';
+const APOD_URL = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&hd=true' //+ '&date=2017-06-01';
 
 export default class ApodContainer extends Component {
   constructor(props) {
