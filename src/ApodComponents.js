@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
 
 const StyledH1 = styled.header`
   font-size: 20px;
-  font-family: serif;
+  font-family: 'Spectral', serif;
 `;
 
 const StyledP = styled.p`
@@ -17,6 +17,7 @@ const StyledP = styled.p`
   font-size: 14px;
   font-family: serif;
   line-height: 1.4;
+  font-family: 'Spectral', serif;
 `;
 
 const StyledSmall = styled.small`
